@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Додавання поста</title>
+</head>
+<body>
+<h1>Додавання поста</h1>
+<form method="post" th:action="@{/posts/add}">
+    <label for="title">Заголовок:</label>
+    <input type="text" id="title" name="title" required>
+    <br>
+    <label for="content">Зміст:</label>
+    <textarea id="content" name="content" required></textarea>
+    <br>
+    <label for="author">Автор:</label>
+    <select id="author" name="author.id" required>
+        <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.username}"></option>
+    </select>
+    <br>
+    <!-- Додайте інші поля, які вам потрібні для поста -->
+    <br>
+    <button type="submit">Додати пост</button>
+</form>
+<a href="/posts">Назад до списку постів</a>
+</body>
+</html>

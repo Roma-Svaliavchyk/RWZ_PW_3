@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список постів</title>
+</head>
+<body>
+<h1>Список постів</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Заголовок</th>
+        <th>Автор</th>
+    </tr>
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.id}"></td>
+        <td th:text="${post.title}"></td>
+        <td th:text="${post.author.username}"></td>
+    </tr>
+</table>
+<a href="/posts/add">Додати пост</a>
+</body>
+</html>

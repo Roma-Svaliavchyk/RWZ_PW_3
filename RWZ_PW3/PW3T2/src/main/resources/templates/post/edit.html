@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редагування поста</title>
+</head>
+<body>
+<h1>Редагування поста</h1>
+<form method="post" th:action="@{/posts/edit/{id}(id=${post.id})}">
+    <label for="title">Заголовок:</label>
+    <input type="text" id="title" name="title" th:value="${post.title}" required>
+    <br>
+    <label for="content">Зміст:</label>
+    <textarea id="content" name="content" required th:text="${post.content}"></textarea>
+    <br>
+    <button type="submit">Зберегти зміни</button>
+</form>
+<a href="/posts">Назад до списку постів</a>
+</body>
+</html>

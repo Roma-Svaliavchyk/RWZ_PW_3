@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Перегляд поста</title>
+</head>
+<body>
+<h1>Пост</h1>
+<h2 th:text="${post.title}"></h2>
+<p th:text="${post.content}"></p>
+<p>Автор: <span th:text="${post.author.username}"></span></p>
+<a href="/posts">Назад до списку постів</a>
+</body>
+</html>
